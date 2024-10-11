@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import AdvertisementSlider from "../Components/AdvertisementSlider.jsx";
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+    <AdvertisementSlider/>
+    </>
   )
 }
 
