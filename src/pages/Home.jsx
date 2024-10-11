@@ -4,9 +4,9 @@ import AdvertisementSlider from "../Components/AdvertisementSlider.jsx";
 const Home = () => {
   return (
     <>
-    <AdvertisementSlider/>
+      <AdvertisementSlider />
     </>
-  )
+  );
 }
 
 export default Home;

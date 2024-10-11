@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #1D3244;
+}
+
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 90%;
+  max-width: 97%;
   margin-top: 6%;
 }
 .slideshowSlider {
