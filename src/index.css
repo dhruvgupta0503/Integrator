@@ -21,7 +21,7 @@ body {
   width: 100%;
   max-height: 250px;
 }
-.slideshowDots {
+/* .slideshowDots {
   text-align: center;
   margin-bottom: 10px;
 }
@@ -36,4 +36,16 @@ body {
 }
 .slideshowDot.active {
   background-color: #6D7179;
+} */
+
+.services {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 97%;
+  margin-top: 2%;
+}
+.service-slide {
+  display: inline-block;
+  width: 100%;
+  max-height: 150px;
 }
