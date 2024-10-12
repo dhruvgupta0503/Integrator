@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  background-color: #1D3244;
+  background-color:#1D3244;
 }
-
+{/*#E3F2FD,,#E0F7FA,, #d3c59b*/}
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
