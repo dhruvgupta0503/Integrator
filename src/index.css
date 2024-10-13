@@ -5,11 +5,10 @@
 body {
   background-color:#1D3244;
 }
-{/*#E3F2FD,,#E0F7FA,, #d3c59b*/}
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 97%;
+  max-width: 95%;
   margin-top: 6%;
 }
 .slideshowSlider {
@@ -19,25 +18,8 @@ body {
 .slide {
   display: inline-block;
   width: 100%;
-  max-height: 250px;
+  max-height: 230px;
 }
-/* .slideshowDots {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.slideshowDot {
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-  margin: 15px 7px 0px;
-  background-color: #c4c4c4;
-}
-.slideshowDot.active {
-  background-color: #6D7179;
-} */
-
 .services {
   margin: 0 auto;
   overflow: hidden;

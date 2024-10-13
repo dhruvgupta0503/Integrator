@@ -40,7 +40,7 @@ const Page = () => {
       
       <div className="container mx-auto py-10">
         <h1 className="text-3xl text-center text-gray-700"></h1>
-        <p className="text-center text-gray-500">future work.</p>
+        {/* <p className="text-center text-gray-500">future work.</p> */}
       </div>
 
    

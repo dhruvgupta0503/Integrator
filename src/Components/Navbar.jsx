@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
   
-    <nav className="fixed top-4 left-0 right-0 bg-[#6D7179] text-white px-4 py-3 z-50 shadow-lg rounded-xl mx-4">
+    <nav className="fixed top-4 left-0 right-0 bg-[#6D7179] text-white px-4 py-3 z-50 shadow-lg rounded-xl mx-8">
       <div className="flex justify-between items-center">
         {/* User Image as Logo */}
         <div className="text-2xl font-bold">

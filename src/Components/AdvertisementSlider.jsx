@@ -4,7 +4,7 @@ import image2 from "../assets/AdvertisementImages/ad2.jpg";
 import image3 from "../assets/AdvertisementImages/ad3.jpg";
 
 const images = [image1, image2, image3];
-const delay = 2500;
+const delay = 2700;
 
 function AdvertisementSlider() {
   const [index, setIndex] = useState(0);
