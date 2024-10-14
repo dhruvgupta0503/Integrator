@@ -11,9 +11,9 @@ function Services() {
   return (
     <div className="services">
       <div className="text-white text-3xl text-center mb-4 font-serif">
-        Our Services
+        Save on Every ride!
       </div>
-      <div className="slideshowSlider flex gap-4 justify-center ml-[2%] mr-[2%] bg-[#6D7179] p-4 rounded-md">
+      <div className="slideshowSlider flex gap-4 justify-center ml-[2%] mr-[2%] bg-[#6D7179] p-4 rounded-md bg-opacity-50">
         {images.map((imageUrl, idx) => (
           <img
             key={idx}
