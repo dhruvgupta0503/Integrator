@@ -13,7 +13,7 @@ const Home = () => {
       <Hero />
       <Services />
       <WhereToSearch />
-      <Download/>
+      <Download />
       <Footer />
     </>
   );

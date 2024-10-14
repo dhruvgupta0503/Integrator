@@ -12,7 +12,7 @@ function Download() {
           <p className="text-white font-serif mb-6 leading-relaxed">
             Unlock the freedom of the open road with ease. Download our app now
             and embark on your next adventure hassle-free. Experience seamless
-            car rentals at your fingertips, offering convenience, reliability,
+            car rides at your fingertips, offering convenience, reliability,
             and unparalleled service.
           </p>
         </div>
