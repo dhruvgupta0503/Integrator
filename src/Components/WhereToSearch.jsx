@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 function WhereToSearch() {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row mb-12">
       <div className="bg-[#6D7179] rounded-lg mt-[2%] ml-[5%] mr-[1%] w-5/6 md:w-3/4 lg:w-4/5 pt-3 p-2 flex items-center">
         <FaSearch className="text-white mr-2" />
         <input
