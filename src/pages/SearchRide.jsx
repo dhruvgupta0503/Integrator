@@ -1,10 +1,17 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
+import { IoArrowBackCircle } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 
 function SearchRide() {
   return (
-    <>
-      <div className="mt-32 mx-10 bg-[#6D7179] p-4 rounded-md opacity-50 min-h-96">
+      <>
+      <NavLink to={"/"} >
+      <div className="mx-10 text-[#6D7179] opacity-70 mt-28 hover:text-[#4e5056] cursor-pointer">
+        <IoArrowBackCircle size={50} />
+              </div>
+        </NavLink>
+      <div className="mt-4 mx-10 bg-[#6D7179] p-4 rounded-md opacity-50 min-h-96">
         Map Integration
       </div>
 
@@ -22,7 +29,6 @@ function SearchRide() {
           Search
         </div>
       </div>
-
     </>
   );
 }
