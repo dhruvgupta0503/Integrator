@@ -50,6 +50,12 @@ const Navbar = () => {
           >
             Login
           </NavLink>
+          <NavLink
+            to="/register"
+            className="bg-[#6D7179] hover:bg-[#1D3244] px-4 py-2 rounded"
+          >
+            Register
+          </NavLink>
         </div>
       </div>
 
@@ -102,6 +108,11 @@ const Navbar = () => {
           >
             Login
           </NavLink>
+          <NavLink
+            to="/register"
+            className="text-lg bg-[#6D7179] hover:bg-[#1D3244] px-4 py-2 rounded text-white"
+            onClick={toggleMenu}
+          >Register</NavLink>
         </div>
       </div>
     </nav>
