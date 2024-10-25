@@ -1,29 +1,32 @@
-import './index.css'
-import Home from "./pages/Home.jsx"
-import Navbar from './Components/Navbar'
-import Error from './pages/Error.jsx';
-import SearchRide from './pages/SearchRide.jsx';
-import ChooseRide from './pages/ChooseRide.jsx';
-import Login from './pages/Login.jsx';
-import Register from './pages/Register.jsx';
-import OTP from './pages/OTP.jsx';
+import React, { Suspense, lazy } from "react";
+import './index.css';
+import Navbar from './Components/Navbar';
 import { Routes, Route } from "react-router-dom";
 
 
-function App() {
+const Home = lazy(() => import("./pages/Home.jsx"));
+const SearchRide = lazy(() => import("./pages/SearchRide.jsx"));
+const ChooseRide = lazy(() => import("./pages/ChooseRide.jsx"));
+const Login = lazy(() => import("./pages/Login.jsx"));
+const Register = lazy(() => import("./pages/Register.jsx"));
+const OTP = lazy(() => import("./pages/OTP.jsx"));
+const Error = lazy(() => import("./pages/Error.jsx"));
 
+function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<SearchRide />} />
-        <Route path="/choose" element={<ChooseRide />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/OTP" element={<OTP />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<SearchRide />} />
+          <Route path="/choose" element={<ChooseRide />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/OTP" element={<OTP />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </Suspense>
     </>
   );
 }
