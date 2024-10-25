@@ -15,7 +15,7 @@ function Register() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    mobile: "",
     password: "",
     confirmPassword: "",
   });
@@ -45,23 +45,22 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    // try {
-    //   // Call API to send OTP to user's phone number
-    //   const response = await axios.post(
-    //     "https://api.drive-zone.co.in/v1/n/public/auth/user/send-otp",
-    //     {
-    //       email: formData.email,
-    //       phoneNumber: formData.phone,
-    //       otpType: "register",
-    //       mode: "cors",
-    //     }
-    //   );
-    //   // Redirect to OTP page with user information in location state
-    //   console.log(response);
-    //   navigate("/OTP", { state: { user: formData } });
-    // } catch (error) {
-    //   console.error("Error sending OTP:", error);
-    // }
+    try {
+      // Call API to send OTP to user's phone number
+      const response = await axios.post(
+        "https://api.transitco.in/auth/otp/send",
+        {
+          email: formData.email,
+          mobile: formData.mobile,
+          mode: "cors",
+        }
+      );
+      // Redirect to OTP page with user information in location state
+      console.log(response);
+      navigate("/OTP", { state: { user: formData } });
+    } catch (error) {
+      console.error("Error sending OTP:", error);
+    }
   };
 
   return (

@@ -12,7 +12,7 @@ export const RegisterAuth = [
     placeholder: "Enter email",
   },
   {
-    name: "phone",
+    name: "mobile",
     label: "Phone",
     type: "number",
     placeholder: "Enter phone",

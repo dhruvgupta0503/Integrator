@@ -6,6 +6,7 @@ import SearchRide from './pages/SearchRide.jsx';
 import ChooseRide from './pages/ChooseRide.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import OTP from './pages/OTP.jsx';
 import { Routes, Route } from "react-router-dom";
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/choose" element={<ChooseRide />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/OTP" element={<OTP />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Authentication } from "../constant/Authentication";
 import Image from "../assets/Login/Login.jpg";
+import { GoogleLogin } from "@react-oauth/google";
 
 const styles = {
   Style1: "flex flex-wrap mx-3 mb-1",
@@ -19,12 +20,66 @@ function Login() {
     email: "",
     password: "",
   });
-
-  const loginUser = (e) => {
-    e.preventDefault();
-    console.log("Login Data: ", loginData);
-    // api call
+  
+  const handleOAuth = async (credential) => {
+    try {
+      const response = await fetch(
+        "https://api.transitco.in/auth/google-oauth/authorize",
+        {
+          credentials: "include",
+          mode: "cors", //remove after deployment
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ idToken: credential }),
+        }
+      );
+      const data = await response.json();
+      if (data.message === "Google Oauth login successful") {
+        dispatch({ type: "USER", payload: true });
+        window.alert("Successful using OAuth");
+        console.log(data);
+      } else if (response.status === 404) {
+        navigate("/Register", { state: { user: data.user } });
+        console.log(data.user);
+      } else {
+        window.alert("Failure using OAuth");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      window.alert("An error occurred during OAuth");
+    }
   };
+
+   const loginUser = async (e) => {
+     e.preventDefault();
+     try {
+       const response = await fetch(
+         "https://api.transitco.in/auth/login",
+         {
+           credentials: "include",
+           mode: "cors", //remove after deployment
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify(loginData),
+         }
+       );
+       const data = await response.json();
+       if (data.message === "User logged in successfully") {
+         dispatch({ type: "USER", payload: true });
+         navigate("/");
+       } else {
+         console.log(data);
+         window.alert("User not logged in");
+       }
+     } catch (error) {
+       console.error("Error:", error);
+       window.alert("An error occurred while logging in.");
+     }
+   };
 
   return (
     <div className="flex flex-col items-start mt-32 mx-[15%] bg-slate-50 size-auto rounded-lg mb-10">
@@ -33,11 +88,7 @@ function Login() {
         onSubmit={loginUser}
       >
         <div className="w-full h-80 object-cover rounded-lg mb-3">
-                <img
-                  className="w-full h-full object-cover"
-                  src={Image}
-                  alt="Login"
-                />
+          <img className="w-full h-full object-cover" src={Image} alt="Login" />
         </div>
         <div className={styles.Style1}></div>
         {Authentication.map((item, index) => (
@@ -60,6 +111,17 @@ function Login() {
             Sign in
           </button>
         </div>
+        {/* <div className="items-start ml-4">
+          <GoogleLogin
+            onSuccess={(response) => {
+              console.log(response);
+              handleOAuth(response.credential);
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+          />
+        </div> */}
         <div className="flex justify-center items-center py-2">
           <Link to="/forgot-password">Forgot Password?</Link>
         </div>
