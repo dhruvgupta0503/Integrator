@@ -5,6 +5,7 @@ import WhereToSearch from '../Components/WhereToSearch.jsx';
 import Footer from '../Components/Footer.jsx'
 import Services from '../Components/Services.jsx';
 import Download from '../Components/Download.jsx';
+import FAQ from '../Components/Faq.jsx';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Hero />
       <Services />
       <WhereToSearch />
+      <FAQ/>
       <Download />
       <Footer />
     </>
