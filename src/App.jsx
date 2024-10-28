@@ -11,6 +11,7 @@ const Login = lazy(() => import("./pages/Login.jsx"));
 const Register = lazy(() => import("./pages/Register.jsx"));
 const OTP = lazy(() => import("./pages/OTP.jsx"));
 const Error = lazy(() => import("./pages/Error.jsx"));
+const Contact = lazy(() => import("./pages/Contact.jsx"));
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<SearchRide />} />
           <Route path="/choose" element={<ChooseRide />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/OTP" element={<OTP />} />
