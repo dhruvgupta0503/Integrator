@@ -25,14 +25,24 @@ function Contact() {
               >
                 {item.label}
               </label>
-              <input
-                id={item.name}
-                name={item.name}
-                type={item.type}
-                required={item.required}
-                placeholder={item.placeholder}
-                className="p-2 border border-[#1D3244] rounded focus:outline-none focus:border-[#1D3244]"
-              />
+              {item.name === "message" ? (
+                <textarea
+                  id={item.name}
+                  name={item.name}
+                  required={item.required}
+                  placeholder={item.placeholder}
+                  className="p-2 border border-[#1D3244] rounded focus:outline-none focus:border-[#1D3244] resize-none h-32"
+                />
+              ) : (
+                <input
+                  id={item.name}
+                  name={item.name}
+                  type={item.type}
+                  required={item.required}
+                  placeholder={item.placeholder}
+                  className="p-2 border border-[#1D3244] rounded focus:outline-none focus:border-[#1D3244]"
+                />
+              )}
             </div>
           ))}
           <button
