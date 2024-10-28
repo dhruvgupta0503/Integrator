@@ -1,4 +1,5 @@
 import React from "react";
+import Transit1 from "../assets/logo/Transit1.png.jpeg";
 
 const Footer = () => {
   return (
@@ -6,15 +7,15 @@ const Footer = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
         <div className="flex items-center space-x-4 ml-[2%]">
           <img
-            src="https://via.placeholder.com/80"
+            src={Transit1}
             alt="Company Logo"
             className="h-10"
           />
           <div>
-            <h2 className="text-white text-xl font-bold">Company Name</h2>
-            <p>1234 Street Name, City, Country</p>
-            <p>Email: kuchbhi@company.com</p>
-            <p>Phone: 9999999999</p>
+            <h2 className="text-white text-xl font-bold">Shubh Technologies</h2>
+            <p>Lucknow,Uttar Pradesh 226022</p>
+            <p>Email: dhruv@transitco.in</p>
+            <p>Phone: 9999499825</p>
           </div>
         </div>
 
@@ -44,3 +45,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

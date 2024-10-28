@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom"; // Import NavLink
+import { NavLink } from "react-router-dom"; 
+import Transit1 from "../assets/logo/Transit1.png.jpeg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,18 +12,18 @@ const Navbar = () => {
   return (
     <nav className="fixed top-4 left-0 right-0 bg-[#6D7179] text-white px-4 py-3 z-50 shadow-lg rounded-xl mx-8">
       <div className="flex justify-between items-center">
-        {/* User Image as Logo */}
+   
         <div className="text-2xl font-bold">
           <NavLink to="/" className="hover:text-[#1D3244]">
             <img
-              src="https://via.placeholder.com/40" // Replace with actual user image URL
+              src={Transit1}
               alt="User"
               className="w-10 h-10 rounded-full border-2 border-white"
             />
           </NavLink>
         </div>
 
-        {/* Hamburger Menu Toggle Button for mobile */}
+  
         <button
           className="text-2xl focus:outline-none md:hidden"
           onClick={toggleMenu}
@@ -30,7 +31,7 @@ const Navbar = () => {
           &#9776;
         </button>
 
-        {/* Desktop Links - hidden in mobile */}
+   
         <div className="hidden md:flex space-x-4">
           <NavLink to="/" className="hover:text-[#1D3244] px-4 py-2" exact>
             Home
@@ -59,7 +60,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+   
       <div
         className={`fixed top-0 right-0 h-full bg-[#1D3244] transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
@@ -75,7 +76,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className="text-lg hover:bg-[#1D3244] px-4 py-2 rounded"
-            onClick={toggleMenu} // Close the menu when a link is clicked
+            onClick={toggleMenu}
             exact
           >
             Home
