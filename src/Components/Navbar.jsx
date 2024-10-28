@@ -38,9 +38,9 @@ const Navbar = () => {
           <NavLink to="/about" className="hover:text-[#1D3244] px-4 py-2">
             About
           </NavLink>
-          <NavLink to="/services" className="hover:text-[#1D3244] px-4 py-2">
+          {/* <NavLink to="/services" className="hover:text-[#1D3244] px-4 py-2">
             Services
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/contact" className="hover:text-[#1D3244] px-4 py-2">
             Contact
           </NavLink>
@@ -87,13 +87,13 @@ const Navbar = () => {
           >
             About
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/services"
             className="text-lg hover:bg-[#1D3244] px-4 py-2 rounded"
             onClick={toggleMenu}
           >
             Services
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/contact"
             className="text-lg hover:bg-[#1D3244] px-4 py-2 rounded"
