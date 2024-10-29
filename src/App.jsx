@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import { Routes, Route } from "react-router-dom";
 
 
+
 const Home = lazy(() => import("./pages/Home.jsx"));
 const SearchRide = lazy(() => import("./pages/SearchRide.jsx"));
 const ChooseRide = lazy(() => import("./pages/ChooseRide.jsx"));
@@ -13,6 +14,7 @@ const OTP = lazy(() => import("./pages/OTP.jsx"));
 const Error = lazy(() => import("./pages/Error.jsx"));
 const Contact = lazy(() => import("./pages/Contact.jsx"));
 const About = lazy(() => import("./pages/About.jsx"));
+const Policy = lazy(() => import("./pages/Policy.jsx"));
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/OTP" element={<OTP />} />
+          <Route path="/policy" element={<Policy />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Suspense>
