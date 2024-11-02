@@ -1,12 +1,12 @@
 import React from "react";
-import Transit1 from "../assets/logo/Transit1.png.jpeg";
+import Transit from "../assets/logo/Transit.png";
 
 const Footer = () => {
   return (
     <footer className="bg-[#6D7179] text-gray-300 py-4 mt-12">
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
         <div className="flex items-center space-x-4 ml-[2%]">
-          <img src={Transit1} alt="Company Logo" className="h-10" />
+          <img src={Transit} alt="Company Logo" className="h-10" />
           <div>
             <h2 className="text-white text-xl font-bold">Shubh Technologies</h2>
             <p>Lucknow, Uttar Pradesh 226022</p>
