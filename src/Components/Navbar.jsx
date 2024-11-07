@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom"; 
 import Transit from "../assets/logo/Transit.png";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
           className="text-2xl focus:outline-none md:hidden"
           onClick={toggleMenu}
         >
-          &#9776;
+          <RxHamburgerMenu />
         </button>
 
         <div className="hidden md:flex space-x-4">
