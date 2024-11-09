@@ -12,7 +12,6 @@ function SearchRide() {
   const [coordinates, setCoordinates] = useState(null);
 
   useEffect(() => {
-    // Fetch the coordinates using Google Maps Geocoding API
     const fetchCoordinates = async () => {
       try {
         const response = await axios.get(
@@ -51,19 +50,17 @@ function SearchRide() {
           <IoArrowBackCircle size={50} />
         </div>
       </NavLink>
-      <div className="mt-4 mx-10 bg-[#6D7179] p-4 rounded-md opacity-50 min-h-96">
-        Map Integration for: {selectedLocation}
+      <div className="mt-4 mx-10 bg-[#6D7179] p-4 rounded-md min-h-96">
+        {coordinates && (
+          <Map
+            center={coordinates}
+            zoom={14}
+            style={{ height: "500px", width: "100%" }}
+          >
+            <Marker position={coordinates} />
+          </Map>
+        )}
       </div>
-
-      {coordinates && (
-        <Map
-          center={coordinates}
-          zoom={14}
-          style={{ height: "500px", width: "100%" }}
-        >
-          <Marker position={coordinates} />
-        </Map>
-      )}
 
       <div className="relative z-10 flex flex-row">
         <NavLink
