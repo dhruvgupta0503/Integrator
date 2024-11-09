@@ -35,22 +35,25 @@ function WhereToSearch() {
   return (
     <div className="my-search-container flex flex-row mb-12 mt-2">
       {isLoaded && (
-        <div className="bg-[#6D7179] rounded-lg ml-[4%] mt-2 w-[70%] md:w-[70%] lg:w-[66%] p-3 flex items-center">
-          <StandaloneSearchBox
-            onLoad={(ref) => (inputref.current = ref)}
-            onPlacesChanged={handleonPlacesChanged}
-          >
-            <div className="flex items-center w-full">
-              <FaSearch className="text-white mr-2" />
-              <input
-                type="text"
-                placeholder="Where To?"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                className="bg-transparent border-none outline-none text-white w-full"
-              />
-            </div>
-          </StandaloneSearchBox>
+        <div className="bg-[#6D7179] rounded-lg ml-[4%] mt-2 w-[90%] md:w-[85%] lg:w-[80%] p-3 mx-auto">
+          {isLoaded && (
+            <StandaloneSearchBox
+              onLoad={(ref) => (inputref.current = ref)}
+              onPlacesChanged={handleonPlacesChanged}
+              className="w-full"
+            >
+              <div className="flex items-center w-full">
+                <FaSearch className="text-white mr-2" />
+                <input
+                  type="text"
+                  placeholder="Where To?"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  className="bg-transparent border-none outline-none text-white w-full"
+                />
+              </div>
+            </StandaloneSearchBox>
+          )}
         </div>
       )}
       <NavLink

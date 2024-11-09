@@ -1,13 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { NavLink, useLocation } from "react-router-dom";
-import { APIProvider } from "@vis.gl/react-google-maps";
+import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
+import axios from "axios";
 
 function SearchRide() {
   const location = useLocation();
-
   const params = new URLSearchParams(location.search);
   const selectedLocation = params.get("location");
+
+  const [coordinates, setCoordinates] = useState(null);
+
+  useEffect(() => {
+    // Fetch the coordinates using Google Maps Geocoding API
+    const fetchCoordinates = async () => {
+      try {
+        const response = await axios.get(
+          `https://maps.googleapis.com/maps/api/geocode/json`,
+          {
+            params: {
+              address: selectedLocation,
+              key: import.meta.env.VITE_GOOGLEMAPS_API_KEY,
+            },
+          }
+        );
+
+        if (response.data.results.length > 0) {
+          const { lat, lng } = response.data.results[0].geometry.location;
+          setCoordinates({ lat, lng });
+        } else {
+          console.error("No results found for this location.");
+        }
+      } catch (error) {
+        console.error("Error fetching coordinates:", error);
+      }
+    };
+
+    if (selectedLocation) {
+      fetchCoordinates();
+    }
+  }, [selectedLocation]);
 
   return (
     <APIProvider
@@ -23,10 +55,19 @@ function SearchRide() {
         Map Integration for: {selectedLocation}
       </div>
 
+      {coordinates && (
+        <Map
+          center={coordinates}
+          zoom={14}
+          style={{ height: "500px", width: "100%" }}
+        >
+          <Marker position={coordinates} />
+        </Map>
+      )}
+
       <div className="relative z-10 flex flex-row">
         <NavLink
           to="/choose"
-          activeClassName=""
           className="bg-[#6D7179] rounded-lg text-white mt-[3%] mx-auto text-center justify-self-center w-3/6 md:w-2/6 lg:w-1/6 p-2 cursor-pointer"
         >
           Search Your Ride
