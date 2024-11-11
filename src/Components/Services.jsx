@@ -1,43 +1,41 @@
-import { useState } from "react";
-import image1 from "../assets/AdvertisementImages/ad1.jpg";
-import image2 from "../assets/AdvertisementImages/ad2.jpg";
-import image3 from "../assets/AdvertisementImages/ad3.jpg";
-
-const images = [image1, image2, image3];
+import image from "../assets/SaveOnEveryRide/SaveOnRide.jpg";
 
 function Services() {
-  const [index, setIndex] = useState(0);
+  const style1 = "flex flex-col sm:flex-row sm:gap-24 sm:ml-[4%]";
+  const cardStyle = "bg-[#1D3244] p-4 w-full sm:w-2/6 rounded-lg";
+  const titleStyle = "text-white text-3xl text-center mb-4 font-serif";
 
   return (
-    <div className="services">
-      <div className="text-white text-3xl text-center mb-4 font-serif">
+    <>
+      <div className={titleStyle}>
         Save on Every ride!
       </div>
-      <div className="slideshowSlider flex gap-4 justify-center ml-[2%] mr-[2%] bg-[#6D7179] p-4 rounded-md bg-opacity-50">
-        {images.map((imageUrl, idx) => (
-          <img
-            key={idx}
-            src={imageUrl}
-            alt={`Slide ${idx + 1}`}
-            className={`service-slide w-40 h-40 object-cover rounded-lg ${
-              index === idx ? "border-8 border-gray-800 shadow-md" : ""
-            }`}
-            onClick={() => setIndex(idx)}
-          />
-        ))}
+      <div
+        className="bg-[#6D7179] mx-[4%] rounded-md p-16 flex flex-col gap-2 sm:gap-6 text-white font-serif font-bold mb-6"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className={style1}>
+          <div className={`${cardStyle} mb-[2%]`}>
+            Compare Prices Across Providers
+          </div>
+          <div className={`${cardStyle} mt-[2%] sm:ml-[20%]`}>
+            Transparent Pricing
+          </div>
+        </div>
+        <div className={style1}>
+          <div className={`${cardStyle} mb-[2%] sm:ml-[4%]`}>
+            Exclusive Discounts and Offers
+          </div>
+          <div className={`${cardStyle} mt-[2%] sm:ml-[22%]`}>
+            Personalized Ride Suggestions
+          </div>
+        </div>
       </div>
-      <div className="slideshowDots flex justify-center mt-4">
-        {images.map((_, idx) => (
-          <div
-            key={idx}
-            className={`w-4 h-4 mx-2 rounded-full ${
-              index === idx ? "bg-gray-500" : "bg-gray-300"
-            }`}
-            onClick={() => setIndex(idx)}
-          />
-        ))}
-      </div>
-    </div>
+    </>
   );
 }
 
