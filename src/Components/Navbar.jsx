@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom"; 
 import Transit from "../assets/logo/Transit.png";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { FaUserCircle } from "react-icons/fa"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,9 +38,6 @@ const Navbar = () => {
           <NavLink to="/about" className="hover:text-[#1D3244] px-4 py-2">
             About
           </NavLink>
-          {/* <NavLink to="/services" className="hover:text-[#1D3244] px-4 py-2">
-            Services
-          </NavLink> */}
           <NavLink to="/contact" className="hover:text-[#1D3244] px-4 py-2">
             Contact
           </NavLink>
@@ -55,13 +53,16 @@ const Navbar = () => {
           >
             Register
           </NavLink>
+
+       
+          <NavLink to="/profile" className="hover:text-[#1D3244] px-4 py-2">
+            <FaUserCircle className="text-2xl" />
+          </NavLink>
         </div>
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-full bg-[#1D3244] transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } w-64 shadow-lg md:hidden`}
+        className={`fixed top-0 right-0 h-full bg-[#1D3244] transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"} w-64 shadow-lg md:hidden`}
       >
         <button
           className="text-3xl text-white absolute top-4 right-4 focus:outline-none"
@@ -85,13 +86,6 @@ const Navbar = () => {
           >
             About
           </NavLink>
-          {/* <NavLink
-            to="/services"
-            className="text-lg hover:bg-[#1D3244] px-4 py-2 rounded"
-            onClick={toggleMenu}
-          >
-            Services
-          </NavLink> */}
           <NavLink
             to="/contact"
             className="text-lg hover:bg-[#1D3244] px-4 py-2 rounded"
@@ -112,6 +106,15 @@ const Navbar = () => {
             onClick={toggleMenu}
           >
             Register
+          </NavLink>
+
+      
+          <NavLink
+            to="/profile"
+            className="text-lg text-white hover:bg-[#1D3244] px-4 py-2 rounded"
+            onClick={toggleMenu}
+          >
+            <FaUserCircle className="text-2xl" />
           </NavLink>
         </div>
       </div>
